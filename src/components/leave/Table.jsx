@@ -10,7 +10,7 @@ const Table = () => {
   const fetchLeaves = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://ems-server-rust.vercel.app/api/leave', {
+      const response = await axios.get('http://localhost:5000/api/leave', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
