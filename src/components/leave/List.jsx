@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import DataTable from 'react-data-table-component'
 import axios from 'axios';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../context/AuthContext';
 import { columns } from '../../utils/LeaveHelper'
 
 const List = () => {

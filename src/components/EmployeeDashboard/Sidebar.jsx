@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaCalendarAlt, FaCogs, FaMoneyBillWave, FaTachometerAlt, FaUsers } from 'react-icons/fa'
-import { useAuth } from '../../context/authContext'
+import { useAuth } from '../../context/AuthContext'
 
 const Sidebar = () => {
   const { user } = useAuth()
