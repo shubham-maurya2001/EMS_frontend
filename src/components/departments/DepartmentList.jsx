@@ -51,20 +51,27 @@ const DepartmentList = () => {
 		setFilteredDepartments(records)
 	}
 	return (
-		<>{depLoading ? <h2 className='text-xl font-semibold'>Loading ....</h2> :
-			<div className='p-5'>
-				<div className='text-center'>
-					<h3 className='text-3xl font-bold'>Manage Departments</h3>
-				</div>
-				<div className='flex justify-between items-center'>
-					<input type="text" placeholder='Search By Dep Name' className='px-4 py-0.5 border' onChange={filterDepartments} />
-					<Link to='/admin-dashboard/add-department' className='px-4 py-1 bg-cyan-600 rounded-md text-white'>Add New Department</Link>
-				</div>
-				<div className='mt-5 '>
-					<DataTable columns={columns} data={filteredDepartments} pagination highlightOnHover />
-				</div>
+		<div className='p-5'>
+			<div className='text-center'>
+				<h3 className='text-3xl font-bold'>Manage Departments</h3>
 			</div>
-		}</>
+			<div className='flex flex-col md:flex-row justify-between items-center mt-4'>
+				<input type="text" placeholder='Search By Dep Name' className='px-4 py-0.5 border mb-2 md:mb-0 md:mr-2 w-full md:w-auto' onChange={filterDepartments} />
+				<Link to='/admin-dashboard/add-department' className='px-4 py-1 bg-cyan-600 rounded-md text-white w-full md:w-auto text-center'>Add New Department</Link>
+			</div>
+			<div className='mt-5 overflow-x-auto'>
+				<DataTable
+					columns={columns}
+					data={filteredDepartments}
+					pagination
+					highlightOnHover
+					striped
+					noHeader
+					progressPending={depLoading}
+					progressComponent={<h2>Loading...</h2>}
+				/>
+			</div>
+		</div>
 	)
 }
 

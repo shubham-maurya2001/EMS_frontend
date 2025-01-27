@@ -58,24 +58,24 @@ const Table = () => {
       <div className='text-center'>
         <h3 className='text-3xl font-bold'>Manage Leaves</h3>
       </div>
-      <div className='flex justify-between items-center'>
-        <input type="text" placeholder='Search By EMP ID' className='px-4 py-0.5 border' onChange={filterChange} />
+      <div className='flex flex-col md:flex-row justify-between items-center mt-4'>
+        <input type="text" placeholder='Search By EMP ID' className='px-4 py-0.5 border mb-4 md:mb-0 md:mr-4 w-full md:w-auto' onChange={filterChange} />
         <div className='space-x-3'>
           <button
-            className='px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md'
+            className='hidden md:inline px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md mb-2'
             onClick={() => filterByButton('Pending')}
           >Pending</button>
           <button
-            className='px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md'
+            className='hidden md:inline px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md mb-2'
             onClick={() => filterByButton('Approved')}
           >Approved</button>
           <button
-            className='px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md'
+            className='hidden md:inline px-2 py-1 bg-cyan-500 text-white hover:bg-cyan-700 rounded-md mb-2'
             onClick={() => filterByButton('Rejected')}
           >Rejected</button>
         </div>
       </div>
-      <div className='mt-4'>
+      <div className='mt-4 overflow-x-auto'>
         <DataTable
           columns={leaveColumns}
           data={filteredLeave}

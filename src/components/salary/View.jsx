@@ -56,18 +56,14 @@ const View = () => {
     setFilteredSalaries(filteredRecords)
   }
   return (
-    // filteredSalaries ? (<div>
-    //   view
-    // </div>) : (<h2 className="text-xl font-semibold">Loading ....</h2>)
     <div className='p-6'>
       <div className='text-center'>
         <h3 className='text-3xl font-bold'>Salary History</h3>
       </div>
       <div className='flex justify-end items-center'>
-        <input type="text" placeholder='Search By Employee ID' className='m-5 px-4 py-0.5 border' onChange={filterSalaries} />
-        {/* <Link to='/admin-dashboard/add-employee' className='px-4 py-1 bg-cyan-600 rounded-md text-white'>Add New Employees</Link> */}
+        <input type="text" placeholder='Search By Employee ID' className='mt-5 px-4 py-0.5 border mb-2 md:mb-0 md:mr-2 w-full md:w-auto' onChange={(e) => filterSalaries(e.target.value)} />
       </div>
-      <div className='mt-4'>
+      <div className='mt-4 overflow-x-auto'>
         <DataTable
           columns={columns}
           data={filteredSalaries}

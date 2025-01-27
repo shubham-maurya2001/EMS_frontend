@@ -49,58 +49,78 @@ const Detail = () => {
         <h2 className="text-2xl font-bold mb-8 text-center">Leave Details</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <img className="rounded-full border w-72" src={`https://ems-server-drab.vercel.app/${leaves.employeeId.userId.profileImage}`} alt="" />
+            <img className="rounded-full border w-72" src={`${leaves.employeeId.userId.profileImageUrl}`} alt="" />
           </div>
           <div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">Name:</p>
               <p className='font-medium'>{leaves.employeeId.userId.name}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">Employee ID:</p>
               <p className='font-medium'>{leaves.employeeId.employeeId}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">Leave Type:</p>
               <p className='font-medium'>{leaves.leaveType}</p>
             </div>
 
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">Reason:</p>
               <p className='font-medium'>{leaves.reason}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">Department:</p>
               <p className='font-medium'>{leaves.employeeId.department.dep_name}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">From:</p>
               <p className='font-medium'>{new Date(leaves.startDate).toLocaleDateString()}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
+            <div className="flex justify-center space-x-3 mb-2">
               <p className="text-lg font-bold">To:</p>
               <p className='font-medium'>{new Date(leaves.endDate).toLocaleDateString()}</p>
             </div>
-            <div className="flex space-x-3 mb-2">
-              <p className="text-lg font-bold">
+            <div className="flex justify-center space-x-3 mb-2">
+              <p className="text-md font-bold">
                 {leaves.status === 'Pending' ? 'Actions:' : 'Status:'}
               </p>
               {leaves.status === 'Pending' ? (
                 <div className='flex space-x-2'>
                   <button
-                    className='px-2 py-0.5 bg-green-500 hover:bg-green-700 rounded-md'
+                    className='px-1 py-0.5 bg-green-500 hover:bg-green-700 rounded-md md:px-2'
                     onClick={() => changeStatus(leaves._id, 'Approved')}
                   >Approve</button>
                   <button
-                    className='px-2 py-0.5 bg-red-500 hover:bg-red-700 rounded-md'
+                    className='px-1 py-0.5 bg-red-500 hover:bg-red-700 rounded-md md:px-2'
                     onClick={() => changeStatus(leaves._id, 'Rejected')}
                   >Reject</button>
                 </div>
-              ) : <p className='font-medium'>{leaves.status}</p>}
+              ) : <p className='text-sm font-medium md:text-md'>{leaves.status}</p>}
             </div>
           </div>
         </div>
-      </div>) : (<h2 className="text-xl font-semibold">Loading ....</h2>)
+      </div>
+    ) : (
+      <div className="max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
+        <h2 className="text-2xl font-bold mb-8 text-center">Loading Leave Details...</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="animate-pulse">
+            <div className="rounded-full bg-gray-300 h-72 w-72"></div>
+          </div>
+          <div className="space-y-4">
+            <div className="h-6 bg-gray-300 rounded w-1/3"></div>
+            <div className="h-6 bg-gray-300 rounded w-1/2"></div>
+            <div className="h-6 bg-gray-300 rounded w-1/4"></div>
+            <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+            <div className="h-6 bg-gray-300 rounded w-1/3"></div>
+            <div className="h-6 bg-gray-300 rounded w-1/2"></div>
+            <div className="h-6 bg-gray-300 rounded w-1/4"></div>
+            <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+          </div>
+        </div>
+      </div>
+    )
   )
 }
 

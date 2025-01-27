@@ -44,8 +44,8 @@ const Setting = () => {
     }
   }
   return (
-    <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md w-96'>
-      <h2 className='text-2xl fond-bold mb-6'>Change Password</h2>
+    <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md w-full sm:w-96'>
+      <h2 className='text-2xl font-bold mb-6'>Change Password</h2>
       <p className='text-red-500 text-sm'>{error}</p>
       <form onSubmit={handleSubmit}>
         {/* Old Password */}
@@ -54,7 +54,7 @@ const Setting = () => {
           <input
             type="password"
             name='oldPassword'
-            placeholder='Change Password'
+            placeholder='Old Password'
             onChange={handleChange}
             className='mt-1 w-full p-2 border border-gray-300 rounded-md'
             required

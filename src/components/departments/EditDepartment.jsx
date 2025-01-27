@@ -53,24 +53,38 @@ const EditDepartment = () => {
         fetchDepartments();
     }, [])
     return (
-        <>{depLoading ? <h2 className='text-xl font-semibold'>Loading ....</h2> :
-            <div className="flex justify-center items-center h-screen-minus-12 bg-gray-100">
-                <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-                    <h3 className="text-xl font-bold mb-4">Update Department</h3>
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-4">
-                            <label htmlFor="dep_name" className="block text-gray-700">Department Name</label>
-                            <input type="text" id="dep_name" name='dep_name' onChange={handleChange} value={department.dep_name} placeholder='Enter Dep Name' className="mt-1 p-2 w-full border rounded" />
+        <>
+            {depLoading ? (
+                <div className="flex justify-center items-center h-screen-minus-12 bg-gray-100">
+                    <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+                        <div className="animate-pulse">
+                            <div className="h-6 bg-gray-300 rounded mb-4"></div>
+                            <div className="h-10 bg-gray-300 rounded mb-4"></div>
+                            <div className="h-6 bg-gray-300 rounded mb-4"></div>
+                            <div className="h-24 bg-gray-300 rounded mb-4"></div>
+                            <div className="h-10 bg-gray-300 rounded"></div>
                         </div>
-                        <div className="mb-4">
-                            <label htmlFor="description" className="block text-gray-700">Description</label>
-                            <textarea name="description" onChange={handleChange} value={department.description} placeholder='description' className="mt-1 p-2 w-full border rounded" />
-                        </div>
-                        <button className="bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700">Update</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        }</>
+            ) : (
+                <div className="flex justify-center items-center h-screen-minus-12 bg-gray-100">
+                    <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+                        <h3 className="text-xl font-bold mb-4">Update Department</h3>
+                        <form onSubmit={handleSubmit}>
+                            <div className="mb-4">
+                                <label htmlFor="dep_name" className="block text-gray-700">Department Name</label>
+                                <input type="text" id="dep_name" name='dep_name' onChange={handleChange} value={department.dep_name} placeholder='Enter Dep Name' className="mt-1 p-2 w-full border rounded" />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="description" className="block text-gray-700">Description</label>
+                                <textarea name="description" onChange={handleChange} value={department.description} placeholder='description' className="mt-1 p-2 w-full border rounded" />
+                            </div>
+                            <button className="bg-cyan-600 text-white py-2 px-4 rounded-md hover:bg-cyan-700">Update</button>
+                        </form>
+                    </div>
+                </div>
+            )}
+        </>
     )
 }
 

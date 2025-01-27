@@ -49,8 +49,8 @@ const Add = () => {
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             {/* from Date */}
-            <div>
-              <label className='bloack text-sm font-medium text-gray-700'>From Date</label>
+            <div className='col-span-2 md:col-span-1'>
+              <label className='block text-sm font-medium text-gray-700'>From Date</label>
               <input
                 type="date"
                 name='startDate'
@@ -60,8 +60,8 @@ const Add = () => {
               />
             </div>
             {/* to Date */}
-            <div>
-              <label className='bloack text-sm font-medium text-gray-700'>To Date</label>
+            <div className='col-span-2 md:col-span-1'>
+              <label className='block text-sm font-medium text-gray-700'>To Date</label>
               <input
                 type="date"
                 name='endDate'

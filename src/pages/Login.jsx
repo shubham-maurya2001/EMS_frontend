@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
@@ -36,10 +36,10 @@ const Login = () => {
         }
     }
     return (
-        <div className='flex flex-col items-center h-screen justify-center bg-gradient-to-b from-cyan-600 to-gray-100 space-y-6'>
-            <h2 className='font-play text-3xl text-white'>Employee Management System</h2>
-            <form className='bg-white p-6 rounded-lg shadow-md w-80' onSubmit={handleSubmit}>
-                <h2 className='text-2xl font-bold mb-4'>Login</h2>
+        <div className='flex flex-col items-center min-h-screen justify-center bg-gradient-to-b from-cyan-600 to-gray-100 p-4 sm:p-6 md:p-8 space-y-6'>
+            <h2 className='font-play text-3xl text-white text-center'>Employee Management System</h2>
+            <form className='bg-white p-6 rounded-lg shadow-md w-full max-w-md' onSubmit={handleSubmit}>
+                <h2 className='text-2xl font-bold mb-4 text-center'>Login</h2>
                 <div className='mb-4'>
                     {error && <p className='text-red-500 text-sm'>{error}</p>}
                     <label htmlFor="email" className='block text-gray-700'>Email</label>
@@ -59,12 +59,8 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div className='flex justify-between items-center mb-6'>
-                    <label className='flex items-center'>
-                        <input type="checkbox" className='mr-2' />
-                        <span className='text-gray-700'>Remember Me</span>
-                    </label>
-                    <a href="#" className='text-cyan-600 hover:underline'>Forgot password?</a>
+                <div className='w-100 flex justify-between items-center mb-6'>
+                    <Link to="/reset-password" className=' text-cyan-600 hover:underline'>Forgot password?</Link>
                 </div>
                 <button type="submit" className='w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition duration-300'>Login</button>
             </form>

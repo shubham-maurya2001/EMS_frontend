@@ -18,7 +18,7 @@ export const columns = [
   {
     name: 'IMAGE',
     selector: (row) => row.profileImage,
-    width: '90px',
+    width: '70px',
     center: 'true'
   },
   {
@@ -31,7 +31,7 @@ export const columns = [
     name: 'DOB',
     selector: (row) => row.dob,
     sortable: true,
-    width: '130px',
+    width: '100px',
     center: 'true'
   },
   {
@@ -87,17 +87,17 @@ export const getEmployees = async (id) => {
 export const EmployeeButtons = ({ _id }) => {
   const navigate = useNavigate()
   return (
-    <div className="flex space-x-3">
-      <button className="px-3 py-1 text-white bg-cyan-600 rounded-md"
+    <div className="flex space-x-2">
+      <button className="px-2 py-1 text-white bg-cyan-600 rounded-md"
         onClick={() => navigate(`/admin-dashboard/employees/${_id}`)}
       >View</button>
-      <button className="px-3 py-1 text-white bg-green-600 rounded-md"
+      <button className="px-2 py-1 text-white bg-green-600 rounded-md"
         onClick={() => navigate(`/admin-dashboard/employees/edit/${_id}`)}
       >Edit</button>
-      <button className="px-3 py-1 text-white bg-yellow-600 rounded-md"
+      <button className="px-2 py-1 text-white bg-yellow-600 rounded-md"
         onClick={() => navigate(`/admin-dashboard/employees/salary/${_id}`)}
       >Salary</button>
-      <button className="px-3 py-1 text-white bg-red-600 rounded-md"
+      <button className="px-2 py-1 text-white bg-red-600 rounded-md"
         onClick={() => navigate(`/admin-dashboard/employees/leave/${_id}`)}
       >Leave</button>
     </div>

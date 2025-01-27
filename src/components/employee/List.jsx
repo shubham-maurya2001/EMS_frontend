@@ -26,7 +26,7 @@ const List = () => {
             dep_name: emp.department.dep_name,
             name: emp.userId.name,
             dob: new Date(emp.dob).toLocaleDateString(),
-            profileImage: <img width={40} className=' p-1 rounded-full' src={`https://ems-server-drab.vercel.app/${emp.userId.profileImage}`} alt="" />,
+            profileImage: <img width={40} className=' p-1 rounded-full' src={`${emp.userId.profileImageUrl}`} alt="" />,
             action: (<EmployeeButtons _id={emp._id} />),
           }
         ));
@@ -54,11 +54,21 @@ const List = () => {
       <div className='text-center'>
         <h3 className='text-3xl font-bold'>Manage Employees</h3>
       </div>
-      <div className='flex justify-between items-center'>
-        <input type="text" placeholder='Search By Employee ID' className='px-4 py-0.5 border' onChange={filterEmployees} />
-        <Link to='/admin-dashboard/add-employee' className='px-4 py-1 bg-cyan-600 rounded-md text-white'>Add New Employees</Link>
+      <div className='flex flex-col md:flex-row justify-between items-center mt-4'>
+        <input
+          type="text"
+          placeholder='Search By Name'
+          className='px-4 py-0.5 border mb-4 md:mb-0 md:mr-4 w-full md:w-auto'
+          onChange={filterEmployees}
+        />
+        <Link
+          to='/admin-dashboard/add-employee'
+          className='px-4 py-1 bg-cyan-600 rounded-md text-white w-full md:w-auto text-center'
+        >
+          Add New Employees
+        </Link>
       </div>
-      <div className='mt-4'>
+      <div className='mt-4 overflow-x-auto'>
         <DataTable
           columns={columns}
           data={filteredEmployee}

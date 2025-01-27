@@ -4,31 +4,37 @@ export const columns = [
   {
     name: '$ NO',
     selector: (row) => row.sno,
+    width: '70px',
     center: 'true',
   },
   {
     name: 'LEAVE TYPE',
     selector: (row) => row.leaveType,
+    width: '150px',
     center: 'true',
   },
   {
     name: 'FROM',
     selector: (row) => row.startDate,
+    width: '100px',
     center: 'true',
   },
   {
     name: 'TO',
     selector: (row) => row.endDate,
+    width: '100px',
     center: 'true',
   },
   {
     name: 'DESCRIPTION',
     selector: (row) => row.reason,
+    width: '120px',
     center: 'true',
   },
   {
     name: 'APPLIED DATE',
     selector: (row) => row.appliedAt,
+    width: '150px',
     center: 'true',
   },
   {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
   const [salary, satSalary] = useState({
@@ -123,7 +123,40 @@ const Add = () => {
           {/* Submit Button */}
           <button type='submit' className='w-full mt-6 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md'>Add Salary</button>
         </form >
-      </div >) : (<h2 className='text-xl font-semibold'>Loading...</h2>)
+      </div >) : (
+      <div className="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
+        <div className="animate-pulse">
+          <div className="h-6 bg-gray-300 rounded w-1/4 mb-6"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+            <div>
+              <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            </div>
+          </div>
+          <div className="h-10 bg-gray-300 rounded w-full mt-6"></div>
+        </div>
+      </div>
+    )
   )
 }
 

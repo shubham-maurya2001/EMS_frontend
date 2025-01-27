@@ -74,13 +74,13 @@ const Edit = () => {
         <form onSubmit={handleSubmit}>
           {/* name */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-            <div>
+            <div className='col-span-2 md:col-span-1'>
               <label className='block text-sm font-medium text-gray-700'>Name</label>
               <input type="text" name='name' value={employee.name} onChange={handleChange} placeholder='Insert Name' className='mt-1 p-2 block w-full border border-gray-300 rounded-md' required />
             </div>
 
             {/* Marital Status */}
-            <div>
+            <div className='col-span-2 md:col-span-1'>
               <label className='block text-sm font-medium text-gray-700'>Marital Status</label>
               <select name='maritalStatus' onChange={handleChange} value={employee.maritalStatus} placeholder="Marital Status" className='mt-1 p-2 block w-full border border-gray-300 rounded-md' required>
                 <option value="">Select Status</option>
@@ -89,7 +89,7 @@ const Edit = () => {
               </select>
             </div>
             {/* Designation*/}
-            <div>
+            <div className='col-span-2 md:col-span-1'>
               <label className='block text-sm font-medium text-gray-700'>Designation</label>
               <input type="text" name='designation' onChange={handleChange}
                 value={employee.designation}
@@ -97,7 +97,7 @@ const Edit = () => {
             </div>
 
             {/* Salary */}
-            <div>
+            <div className='col-span-2 md:col-span-1'>
               <label className='block text-sm font-medium text-gray-700'>Salary</label>
               <input type="number" name='salary' onChange={handleChange}
                 value={employee.salary}
@@ -123,7 +123,19 @@ const Edit = () => {
           {/* Submit Button */}
           <button type='submit' className='w-full mt-6 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md'>Update</button>
         </form >
-      </div >) : (<h2 className='text-xl font-semibold'>Loading...</h2>)
+      </div >) : (<div className="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
+        <div className="animate-pulse">
+          <div className="h-6 bg-gray-300 rounded w-1/4 mb-6"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            <div className="h-10 bg-gray-300 rounded mb-4"></div>
+            <div className="h-10 bg-gray-300 rounded mb-4 col-span-2"></div>
+          </div>
+          <div className="h-10 bg-gray-300 rounded mt-6"></div>
+        </div>
+      </div>)
   )
 }
 

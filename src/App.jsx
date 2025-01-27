@@ -20,6 +20,7 @@ import AddLeave from './components/leave/Add'
 import Setting from './components/EmployeeDashboard/Setting'
 import Table from './components/leave/Table'
 import Detail from './components/leave/Detail'
+import ResetPassword from './components/PasswordModification/ResetPassword'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/admin-dashboard" />}></Route>
         <Route path="/login" element={<Login />} ></Route>
+        <Route path="/reset-password" element={<ResetPassword />} ></Route>
         <Route path="/admin-dashboard" element={
           <PrivateRoutes>
             <RoleBaseRoutes requiredRole={['admin']}>
