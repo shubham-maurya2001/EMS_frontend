@@ -18,19 +18,22 @@ const EmployeeDashboard = () => {
   }, [])
 
   if (loading) {
-    return (<div className='flex'>
-      <Skeleton_sidebar />
-      <div className='flex-1 ml-20 bg-white-200 h-screen md:ml-48'>
-        <Skeleton_Navbar />
-      </div>
-    </div>)
+    return (
+      <div className='flex'>
+        <Skeleton_sidebar />
+        <div className='flex-1 bg-white-200 h-screen '>
+          <Skeleton_Navbar />
+        </div>
+      </div>)
   }
   return (
-    <div className='flex'>
+    <div className='flex flex-col md:flex-row'>
       <Sidebar />
-      <div className='flex-1 overflow-x-auto ml-20 bg-white-200 h-screen md:ml-48'>
+      <div className='flex-1 overflow-x-auto bg-white-200 h-screen '>
         <Navbar />
-        <Outlet />
+        <div className='pl-0 md:pl-48'>
+          <Outlet />
+        </div>
       </div>
     </div>
   )

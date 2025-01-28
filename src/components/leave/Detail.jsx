@@ -103,20 +103,38 @@ const Detail = () => {
       </div>
     ) : (
       <div className="max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
-        <h2 className="text-2xl font-bold mb-8 text-center">Loading Leave Details...</h2>
+        <div className='flex justify-center'>
+          <h2 className="mb-8 bg-gray-300 w-2/6 h-8 rounded"></h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="animate-pulse">
-            <div className="rounded-full bg-gray-300 h-72 w-72"></div>
+          <div className="flex justify-center animate-pulse">
+            <div className="rounded-full bg-gray-300 w-72 h-72"></div>
           </div>
-          <div className="space-y-4">
-            <div className="h-6 bg-gray-300 rounded w-1/3"></div>
-            <div className="h-6 bg-gray-300 rounded w-1/2"></div>
-            <div className="h-6 bg-gray-300 rounded w-1/4"></div>
-            <div className="h-6 bg-gray-300 rounded w-3/4"></div>
-            <div className="h-6 bg-gray-300 rounded w-1/3"></div>
-            <div className="h-6 bg-gray-300 rounded w-1/2"></div>
-            <div className="h-6 bg-gray-300 rounded w-1/4"></div>
-            <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+          <div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
+            <div className="flex justify-center space-x-3 mb-5 animate-pulse">
+              <p className="text-md font-bold bg-gray-300 w-24 h-6 rounded"></p>
+              <p className='font-medium bg-gray-300 w-48 h-6 rounded'></p>
+            </div>
           </div>
         </div>
       </div>

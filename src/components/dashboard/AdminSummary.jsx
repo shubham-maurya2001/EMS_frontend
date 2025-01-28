@@ -30,7 +30,7 @@ const AdminSummary = () => {
     if (!summary) {
         return (<div className='pl-4'>
             <div className='mt-8'>
-                <h4 className='text-2xl font-bold  bg-gray-300 h-10 w-2/6 rounded-md'></h4>
+                <h4 className='text-2xl font-bold  bg-gray-300 h-10 w-3/6 rounded-md md:w-2/6'></h4>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-6'>
                     <div className='animate-pulse flex space-x-4'>
                         <div className='rounded-full bg-gray-300 h-12 w-12'></div>

@@ -1,41 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaTachometerAlt, FaUsers } from 'react-icons/fa'
 
+let handleToggleAdmin = () => { };
 const AdminSidebar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    handleToggleAdmin = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleNavLinkClick = () => {
+        setIsOpen(false);
+    };
+
     return (
-        <div className=' bg-gray-800 text-white w-20 space-y-2 h-screen fixed top-0 bottom-0 left-0 md:w-48'>
-            <div className='bg-cyan-600 h-12 flex items-center justify-center'>
-                <h3 className='text-sm text-center justify-center font-play md:text-2xl'>Employee MS</h3>
-            </div>
-            <div className='px-4'>
-                <NavLink to='/admin-dashboard' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} end>
+        <div className={`bg-gray-800 text-white w-48 space-y-2 h-screen fixed top-12 bottom-0 left-0 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+            <div className='px-4 py-3'>
+                <NavLink to='/admin-dashboard' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} end onClick={handleNavLinkClick}>
                     <FaTachometerAlt />
-                    <span className='hidden md:block'>Dashboard</span>
+                    <span>Dashboard</span>
                 </NavLink>
-                <NavLink to='/admin-dashboard/employees' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`}>
+                <NavLink to='/admin-dashboard/employees' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
                     <FaUsers />
-                    <span className='hidden md:block'>Employees</span>
+                    <span>Employees</span>
                 </NavLink>
-                <NavLink to='/admin-dashboard/departments' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} >
+                <NavLink to='/admin-dashboard/departments' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
                     <FaBuilding />
-                    <span className='hidden md:block'>Departments</span>
+                    <span>Departments</span>
                 </NavLink>
-                <NavLink to='/admin-dashboard/leaves' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`}>
+                <NavLink to='/admin-dashboard/leaves' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
                     <FaCalendarAlt />
-                    <span className='hidden md:block'>Leaves</span>
+                    <span>Leaves</span>
                 </NavLink>
-                <NavLink to='/admin-dashboard/salary/add' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`}>
+                <NavLink to='/admin-dashboard/salary/add' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
                     <FaMoneyBillWave />
-                    <span className='hidden md:block'>Salary</span>
+                    <span>Salary</span>
                 </NavLink>
-                <NavLink to='/admin-dashboard/setting' className='flex items-center space-x-4 py-2.5 px-4 rounded'>
+                <NavLink to='/admin-dashboard/setting' className='flex items-center space-x-4 py-2.5 px-4 rounded' onClick={handleNavLinkClick}>
                     <FaCogs />
-                    <span className='hidden md:block'>Setting</span>
+                    <span>Setting</span>
                 </NavLink>
             </div>
         </div>
-    )
+    );
 }
 
 export default AdminSidebar
+export { handleToggleAdmin }
