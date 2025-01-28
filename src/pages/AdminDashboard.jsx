@@ -26,15 +26,19 @@ const AdminDashboard = () => {
     </div>)
   }
   return (
-    <div className='flex flex-col md:flex-row'>
+    <div className="flex flex-col relative">
       <AdminSidebar />
-      <div className='flex-1 bg-white-200 h-screen '>
+      <div className="sticky flex-1 bg-white-200 h-screen">
         <Navbar />
+      </div>
+
+      <div className="overflow-auto h-[calc(100vh-48px)]">
         <div className='pl-0 md:pl-48'>
           <Outlet />
         </div>
       </div>
     </div>
+
   )
 }
 
