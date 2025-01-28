@@ -29,7 +29,7 @@ const EmployeeDashboard = () => {
   return (
     <div className='flex flex-col md:flex-row'>
       <Sidebar />
-      <div className='flex-1 overflow-x-auto bg-white-200 h-screen '>
+      <div className='flex-1 bg-white-200 h-screen '>
         <Navbar />
         <div className='pl-0 md:pl-48'>
           <Outlet />

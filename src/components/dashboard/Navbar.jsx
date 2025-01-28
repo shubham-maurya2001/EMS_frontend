@@ -6,7 +6,7 @@ import { handleToggleEmpLoyee } from '../EmployeeDashboard/Sidebar'
 const Navbar = () => {
     const { user, logout } = useAuth()
     return (
-        <div className='flex items-center justify-between text-white h-12 bg-cyan-600 px-2'>
+        <div className='flex items-center justify-between text-white h-12 bg-cyan-600 px-2 sticky top-0 z-50 w-full'>
             <div className='flex items-center space-x-5 '>
                 <button className='md:hidden' onClick={() => { user.role === 'admin' ? handleToggleAdmin() : handleToggleEmpLoyee() }}>
                     <svg className='w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
