@@ -17,7 +17,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`bg-gray-800 text-white w-48 space-y-2 h-screen fixed top-12 bottom-0 left-0 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`} >
+    <div className={`bg-gray-800 text-white w-60 space-y-2 h-screen fixed top-12 bottom-0 left-0 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`} >
       <div className='px-4 py-3'>
         <NavLink to='/employee-dashboard' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} end onClick={handleNavLinkClick}>
           <FaTachometerAlt />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaTachometerAlt, FaUsers } from 'react-icons/fa'
+import { FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaRegCalendarAlt, FaTachometerAlt, FaUsers } from 'react-icons/fa'
+import { AiOutlineFileText } from 'react-icons/ai'
 
 let handleToggleAdmin = () => { };
 const AdminSidebar = () => {
@@ -15,7 +16,7 @@ const AdminSidebar = () => {
     };
 
     return (
-        <div className={`bg-gray-800 text-white w-48 space-y-2 h-screen fixed top-12 bottom-0 left-0 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+        <div className={`bg-gray-800 text-white w-60 space-y-2 h-screen fixed top-12 bottom-0 left-0 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
             <div className='px-4 py-3'>
                 <NavLink to='/admin-dashboard' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} end onClick={handleNavLinkClick}>
                     <FaTachometerAlt />
@@ -36,6 +37,14 @@ const AdminSidebar = () => {
                 <NavLink to='/admin-dashboard/salary/add' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
                     <FaMoneyBillWave />
                     <span>Salary</span>
+                </NavLink>
+                <NavLink to='/admin-dashboard/attendance' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
+                    <FaRegCalendarAlt />
+                    <span>Attendance</span>
+                </NavLink>
+                <NavLink to='/admin-dashboard/attendance-report' className={({ isActive }) => `${isActive ? 'bg-cyan-500 ' : ' '}flex items-center space-x-4 py-2.5 px-4 rounded`} onClick={handleNavLinkClick}>
+                    <AiOutlineFileText />
+                    <span>Attendance Report</span>
                 </NavLink>
                 <NavLink to='/admin-dashboard/setting' className='flex items-center space-x-4 py-2.5 px-4 rounded' onClick={handleNavLinkClick}>
                     <FaCogs />

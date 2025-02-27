@@ -13,7 +13,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://ems-server-drab.vercel.app/api/auth/reset-password", { email, dob, password, confirmPassword },)
+      const response = await axios.post("http://localhost:5000/api/auth/reset-password", { email, dob, password, confirmPassword },)
       if (response.data.success) {
         setMessage({ message: response.data.message, color: "text-green-600" });
         setTimeout(() => {

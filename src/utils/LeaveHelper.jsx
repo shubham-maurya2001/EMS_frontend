@@ -53,14 +53,14 @@ export const leaveColumns = [
     width: '70px',
   },
   {
-    name: 'EMP ID',
-    selector: (row) => row.employeeId,
+    name: 'NAME',
+    selector: (row) => row.name,
     center: 'true',
     width: '120px',
   },
   {
-    name: 'NAME',
-    selector: (row) => row.name,
+    name: 'EMP ID',
+    selector: (row) => row.employeeId,
     center: 'true',
     width: '120px',
   },

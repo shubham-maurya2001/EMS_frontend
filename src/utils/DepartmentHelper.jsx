@@ -28,7 +28,7 @@ export const DepartmentButtons = ({ _id, onDepartmentDelete }) => {
         const confirm = window.confirm('Are you want to delete this Department ?')
         if (confirm) {
             try {
-                const response = await axios.delete(`https://ems-server-drab.vercel.app/api/department/${id}`, {
+                const response = await axios.delete(`http://localhost:5000/api/department/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`,
                     },
@@ -45,7 +45,7 @@ export const DepartmentButtons = ({ _id, onDepartmentDelete }) => {
     }
     return (
         <div className="flex space-x-2">
-            <button className="px-2 py-1 text-white bg-cyan-600 rounded-md"
+            <button className="px-2 py-1 text-white bg-yellow-600 rounded-md"
                 onClick={() => navigate(`/admin-dashboard/department/${_id}`)}
             >Edit</button>
             <button className="px-2 py-1 text-white bg-red-600 rounded-md"

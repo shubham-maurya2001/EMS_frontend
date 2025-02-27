@@ -32,8 +32,8 @@ const AdminDashboard = () => {
         <Navbar />
       </div>
 
-      <div className="overflow-auto h-[calc(100vh-48px)]">
-        <div className='pl-0 md:pl-48'>
+      <div className="overflow-auto h-[calc(100vh-60px)]">
+        <div className='pl-0 md:pl-60'>
           <Outlet />
         </div>
       </div>
